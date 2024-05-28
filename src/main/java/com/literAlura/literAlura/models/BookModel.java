@@ -3,6 +3,7 @@ package com.literAlura.literAlura.models;
 import jakarta.persistence.*;
 import org.apache.tomcat.util.digester.ArrayStack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,7 +15,8 @@ public class BookModel {
     private String title;
     @ManyToMany(mappedBy = "books", cascade = CascadeType.ALL, fetch= FetchType.EAGER)
     private List<AuthorModel> authors;
-    private List<String> subjects;
+    private List<String> languages;
+    //private List<String> subjects;
     private Double downloadCount;
 
     public BookModel(){
@@ -24,7 +26,8 @@ public class BookModel {
         this.id = book.id();
         this.title = book.title();
         this.downloadCount = book.downloadCount();
-        this.subjects = book.subjects();
+        this.languages = book.languages();
+        // this.subjects = book.subjects();
         this.authors = new ArrayStack<>();
     }
 
@@ -59,12 +62,21 @@ public class BookModel {
         }
     }
 
-    public List<String> getSubjects() {
-        return subjects;
+//    public List<String> getSubjects() {
+//        return subjects;
+//    }
+//
+//    public void setSubjects(List<String> subjects) {
+//        this.subjects = subjects;
+//    }
+
+
+    public List<String> getLanguages() {
+        return languages;
     }
 
-    public void setSubjects(List<String> subjects) {
-        this.subjects = subjects;
+    public void setLanguages(List<String> languages) {
+        this.languages = languages;
     }
 
     public Double getDownloadCount() {
@@ -75,13 +87,20 @@ public class BookModel {
         this.downloadCount = downloadCount;
     }
 
+    public List<String> getAuthorsNames(List<AuthorModel> authors){
+        List<String> authorsNames = new ArrayList<>();
+        authors.forEach(a->authorsNames.add(a.getName()));
+        return authorsNames;
+    }
+
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", title='" + title + '\'' +
+        return "Id=" + this.id +
+                ", Titulo='" + this.title +
+                ", Authores='" + getAuthorsNames(this.authors) +
                 //", authors=" + authors +
-                ", subjects=" + subjects +
-                ", downloadCount=" + downloadCount;
+                ", Lenguajes=" + this.languages +
+                ", Cantidad de descargas=" + this.downloadCount;
     }
 }

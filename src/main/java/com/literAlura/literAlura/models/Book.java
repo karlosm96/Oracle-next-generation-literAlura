@@ -10,7 +10,8 @@ public record Book(
         @JsonAlias("id") Long id,
         @JsonAlias("title") String title,
         @JsonAlias("authors") List<Author> authors,
-        @JsonAlias("subjects") List<String> subjects,
+        @JsonAlias("languages") List<String> languages,
+        //@JsonAlias("subjects") List<String> subjects,
         @JsonAlias("download_count") Double downloadCount
 ) {
 }

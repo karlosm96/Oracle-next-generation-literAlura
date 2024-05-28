@@ -69,9 +69,9 @@ public class AuthorModel {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", birthYear=" + birthYear +
-                ", deathYear=" + deathYear ;
+        return "Nombre='" + name +
+                ", Año de nacimiento=" + birthYear +
+                ", Año de defunción=" + deathYear;
                 //", books=" + books;
     }
 }
