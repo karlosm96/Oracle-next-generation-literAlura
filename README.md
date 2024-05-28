@@ -2,11 +2,12 @@
 
 Esta aplicación de consola permite gestionar y consultar información de libros y autores obtenidos desde la API de Gutendex (https://gutendex.com/). Proporciona varias funcionalidades, como cargar datos, listar libros y autores, buscar libros por título, buscar autores por nombre, y mostrar estadísticas de descargas.
 
-## Requisitos
+## Requisitos/ Tecnologias
 
-- Java 8 o superior
-- Maven
-- Base de datos compatible con JPA/Hibernate
+- Java 17
+- PostgreSQL 15
+- Spring 3.2.6
+- Maven 3
 
 ## Instalación
 
@@ -49,3 +50,8 @@ Al ejecutar la aplicación, se presentará un menú con las siguientes opciones:
 7. **Cantidad de libros por idioma**: Muestra la cantidad de libros disponibles en el idioma especificado.
 8. **Listar el top 10 de los libros más descargados**: Muestra una lista de los 10 libros con más descargas.
 9. **Mostrar estadísticas**: Muestra estadísticas de descargas, incluyendo el total de descargas, el libro con la menor cantidad de descargas y el libro con la mayor cantidad de descargas, así como el promedio de descargas por libro.
+
+
+## Personas Desarrolladoras del Proyecto
+
+- [Carlos Muñoz](https://github.com/karlosm96)
